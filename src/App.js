@@ -1,31 +1,21 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+import {Home} from "./Components/Home";
 
-import {toast, ToastContainer} from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
-
-import "react-toastify/dist/ReactToastify.css";
-import {Login} from "./pages/auth/Login";
-import {Register} from "./pages/auth/Register";
-import {Home} from "./pages/Home";
-import {Header} from "./components/nav/Header";
-
-import { Route, Routes } from "react-router-dom";
+import {Login} from "./Components/Login"
+import { SignUP } from "./Components/SignUP";
 
 
 const App = ()=> {
   return (
-    <div>
-      <Header/>
-      <ToastContainer/>
-      <Routes>
-        <Route path="register" element={<Register/>}></Route>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="login" element={<Login/>}></Route>
-      </Routes>
-    </div>
+ 
+    <Routes>
+      <Route  path="/" element={<Home/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/signup" element={<SignUP/>}></Route>
+    </Routes>
+   
   );
   
 }
-
 export default App;
